@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<table class="table table-hover">
+    <thead>
+        <tr>
+          <th>Symbol</th>
+          <th>Action</th>
+          <th>Shares</th>
+          <th>Price</th>
+          <th>Total Amount</th>
+          <th>Date (UTC)</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for row in transactions %}
+        {% if row['amount'] > 0 %}
+            <tr class="table-primary">
+        {% else %}
+            <tr class="table-success">
+        {%endif%}
+                <td>{{row['symbol']}}</td>
+                <td>
+                    {% if row['amount'] > 0 %}
+                        Buy
+                    {% else %}
+                        Sell
+                    {%endif%}
+                </td>
+                <td>{{row['amount']}}</td>
+                <td>{{row['price'] | usd}}</td>
+                <td>{{(row['price']*row['amount']) | usd}}</td>
+                <td>{{row['time']}}</td>
+            </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

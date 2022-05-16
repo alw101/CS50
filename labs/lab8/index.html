@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+        
+
+            document.addEventListener('DOMContentLoaded', function() {
+
+                // Correct MC Question
+                let correct = document.querySelector('.Correct');
+                correct.addEventListener('click', function(){
+                    correct.style.backgroundColor = 'green';
+                    document.querySelector('.Feedback1').innerHTML = 'Correct!';
+                    document.querySelector('.Feedback1').style.color = 'green';
+                    let incorrect = document.querySelectorAll('.Incorrect');
+                    for(let i = 0; i < incorrect.length; i++) {
+                        incorrect[i].style.backgroundColor = "#d9edff";
+                        incorrect[i].disabled = true;
+                    }
+                });
+                // Incorrect MC Question
+                let incorrect = document.querySelectorAll('.Incorrect');
+                for(let i = 0; i < incorrect.length; i++) {
+                    incorrect[i].addEventListener('click', function() {
+                        for(let j = 0; j < incorrect.length; j++){
+                            incorrect[j].style.backgroundColor = '#d9edff';
+                        }
+                        incorrect[i].style.backgroundColor = 'red';
+                        incorrect[i].disabled = true;
+                        document.querySelector('.Feedback1').innerHTML = "Sorry, thats incorrect. Please Try Again";
+                        document.querySelector('.Feedback1').style.color = 'red';
+                    });
+                }
+                
+                //Textbox
+                document.querySelector('.check').addEventListener('click', function(){
+                    let input = document.querySelector('input')
+                    if (input.value == "Greenland") {
+                        input.style.backgroundColor = 'green'
+                        document.querySelector('.Feedback2').innerHTML = 'Correct!';
+                        document.querySelector('.Feedback2').style.color = 'green';
+                        document.querySelector('.check').disabled = true;
+                    }
+                    else{
+                        input.style.backgroundColor = 'red'
+                        document.querySelector('.Feedback2').innerHTML = "Sorry, thats incorrect. Please Try Again";
+                        document.querySelector('.Feedback2').style.color = 'red';
+                    }
+                })
+                
+                // Placeholder
+                document.querySelector('.answerBox').placeholder = "Write answer here...";
+                
+                });
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>Which Country Produces The Most Coffee In The World?</h3>
+                <button class="Correct">Brazil</button>
+                <button class="Incorrect">Peru</button>
+                <button class="Incorrect">Cuba</button>
+                <button class="Incorrect">Spain</button>
+                <button class="Incorrect">Mexico</button>
+                <button class="Incorrect">Columbia</button>
+                
+                <p class="Feedback1">Choose an answer above and I'll tell you if it's right or wrong!</p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <h3>Name The Biggest Island In The World</h3>
+                <input class="answerBox" type="text" placeholder = "Write answer here..." class="text">
+                <button type="submit" class="check">Submit</button>
+                
+                <p class="Feedback2">Type an answer above and I'll tell you if it's right or wrong!</p>
+                
+            </div>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>My Webpage</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelector('#home').addEventListener('click', function() {
+                        window.open("/index.html", "_self");
+                    });
+                document.querySelector('#my_hobbies').addEventListener('click', function() {
+                        window.open("/myHobbies.html", "_self");
+                    });
+                document.querySelector('#media').addEventListener('click', function() {
+                        window.open("/media.html", "_self");
+                    });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="top">
+            <h1><b>Albert Wood</b></h1>
+            <h3>A site all about me</h3>
+        </div>
+        <div class="nav">
+            <button class="diffPage" id='home'>Home</button>
+            <button class='diffPage' id="my_hobbies">My Hobbies</button>
+            <button class='currentPage' id="outdoor_activities">My Favorite Outdoor Activities</button>
+            <button class='diffPage' id="media">Media</button>
+        </div>
+        <div class="content">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="images/biking.JPG" class="img-fluid rounded-start centred_image" alt="computer" style="vertical-align:middle">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Biking</h5>
+                        <p class="card-text">I like to mountain bike, as well as some road biking. I find it's the best way to explore an area and have some fun!</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="images/skiing.jpeg" class="img-fluid rounded-start" alt="Me skiing">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Skiing</h5>
+                        <p class="card-text">During the winter months I like to cross-country ski - get excercise on the ups and fun on the down!</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="images/IMG_2471.jpeg" class="img-fluid" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Hiking</h5>
+                        <p class="card-text">Hiking is a good way to see views and spend time with family! I also like doing overnight backpacking trips.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+              </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<table class="table table-hover">
+    <thead>
+        <tr>
+          <th class="text-start">Method</th>
+          <th>Distance</th>
+          <th class="text-end">CO2</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for row in emissions %}
+            <tr>
+                <td class="text-start">{{row}}</td>
+                <td>{{distances[row]['text']}}</td>
+                <td class="text-end">{{emissions[row]}}kg</td>
+            </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  Note that provided results for rail/bus can be inaccurate as they are often combined on a single trip. See <a href="{{ url }}">Directions</a>.
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<table class="table table-hover">
+    <thead>
+        <tr>
+          <th class="text-start">Symbol</th>
+          <th>Name</th>
+          <th>Shares</th>
+          <th>Price</th>
+          <th>Total</th>
+          <th  class="text-end">Change</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for row in holdings %}
+      {% if row['change'] >= 0 %}
+            <tr class="table-success">
+        {% else %}
+            <tr class="table-danger">
+        {%endif%}
+                <td class="text-start">{{row['symbol']}}</td>
+                <td>{{row['name']}}</td>
+                <td>{{row['amount']}}</td>
+                <td>{{row['price']| usd}}</td>
+                <td>{{(row['price']*row['amount'])| usd}}</td>
+                <td class="text-end">{{row['change']| usd}}</td>
+            </tr>
+      {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td class="border-0 text-end" colspan="4">Cash Available</td>
+            <td class="border-0">{{cash | usd}}</td>
+        </tr>
+        {% if change >= 0 %}
+            <tr class="table-success">
+        {% else %}
+            <tr class="table-danger">
+        {%endif%}
+              <td class="border-0 fw-bold text-end" colspan="4">TOTAL</td>
+              <td class="border-0 fw-bold">{{total | usd}}</td>
+              <td class="border-0 fw-bold">{{change | usd}}</td>
+            </tr>
+    </tfoot>
+  </table>
+{% endblock %}

@@ -1,0 +1,27 @@
+sort1 uses: Bubble Sort
+
+How do you know?: When the data is sorted it uses a lot less time than if it's not, and it is the only sort that as a diffrent max and min time
+
+sort2 uses: Merge Sort
+
+How do you know?: All of the times were close together, and it took shorter than the other sort
+
+sort3 uses: Selection Sort
+
+How do you know?: All the times were close together, and took longer than the other sort. 
+
+
+
+Sort1:
+    Random: 7.768s
+    Sorted: 0.657s
+    Reversed: 5.6s
+
+Sort2:
+    Random: 0.907s
+    Sorted: 0.447s
+    Reverse: 0.494s
+Sort3:
+    Random: 3.169s
+    Sorted: 3.143s
+    Reverse: 3.200
