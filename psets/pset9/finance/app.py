@@ -1,6 +1,6 @@
 import os
 
-#  export API_KEY=pk_ec80224b7e534e02b491c4abc95127a4
+#  export API_KEY=
 
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
